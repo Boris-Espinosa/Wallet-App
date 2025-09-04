@@ -23,6 +23,6 @@ export async function initDB() {
         console.log("✅ Database initialized successfully")
     } catch (error) {
         console.error("❌ Error initializing DB:", error)
-        throw error; // Lanzar el error en lugar de hacer process.exit aquí
+        throw error
     }
 }

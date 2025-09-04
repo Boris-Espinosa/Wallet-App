@@ -3,11 +3,11 @@ import { Ratelimit } from "@upstash/ratelimit"
 
 const rateLimit = new Ratelimit({
   redis: Redis.fromEnv(),
-  // Límite muy estricto para testing: 2 requests por 30 segundos
-  limiter: Ratelimit.slidingWindow(2, "30 s"),
+  
+  limiter: Ratelimit.slidingWindow(100, "60 s"),
   analytics: true
 })
 
-console.log("🔧 Rate limiter configured: 2 requests per 30 seconds");
+console.log("Rate limiter configured: 100 requests per 60 seconds");
 
 export default rateLimit
